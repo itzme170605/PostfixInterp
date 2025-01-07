@@ -1,0 +1,96 @@
+commit 85a68f58a78335a554c051240e9f931eea42049d
+Author: Jatin <jj7485@rit.edu>
+Date:   Sun Nov 24 23:37:23 2024 -0500
+
+    sybmission 6
+
+commit d8583e4241d2dca1db0776c8a7fd003c6587ae71
+Author: Jatin <jj7485@rit.edu>
+Date:   Sun Nov 24 19:53:16 2024 -0500
+
+    sunmission 4 , handled dangling pointers in parse.c
+
+commit aeffe3838af9528989be729030047b0420641457
+Author: Jatin <jj7485@rit.edu>
+Date:   Sun Nov 24 19:42:45 2024 -0500
+
+    submission 3
+
+commit 894fe7250486f31620652b3bcff81f120b181623
+Author: Jatin <jj7485@rit.edu>
+Date:   Sun Nov 24 18:53:37 2024 -0500
+
+    added update assignment operator in parser.c
+
+commit 421ce91ee276fa70df0dec231046ea2afb7004dd
+Author: Jatin <jj7485@rit.edu>
+Date:   Sun Nov 24 18:13:33 2024 -0500
+
+    addignment operator working and string.h include default soure'
+
+commit 07319046171f1f0e0ee004fce96d89aa50ca9ef4
+Author: Jatin <jj7485@rit.edu>
+Date:   Sat Nov 23 23:46:42 2024 -0500
+
+    added clenup_tree implementation valgrind clean
+
+commit 8304d570849f3384a23538756f06147610a8b004
+Author: Jatin <jj7485@rit.edu>
+Date:   Sat Nov 23 23:33:39 2024 -0500
+
+    addition, multiplication, division, wtc work
+    - assignment and ternary dont
+
+commit dde0b6455d7bf9d39dda64a7d36d29d1a9fcb9ed
+Author: Jatin <jj7485@rit.edu>
+Date:   Sat Nov 23 19:02:28 2024 -0500
+
+    added print_infix fixed errors in parser.c
+
+commit 726177bd25aad216039ba7ccbd7a5f6f4ffe09cf
+Author: Jatin <jj7485@rit.edu>
+Date:   Sat Nov 23 17:45:28 2024 -0500
+
+    added parse node recuresive functions parse:parse.c
+
+commit f1ed76e6bb1920dab9d97f4e8f1b6ca26f0540da
+Author: Jatin <jj7485@rit.edu>
+Date:   Sat Nov 23 17:16:37 2024 -0500
+
+    added make_parse_tree::parser.c
+
+commit e3a90f44f21f1229d255a816834d655d254440f4
+Author: Jatin <jj7485@rit.edu>
+Date:   Sat Nov 23 15:59:47 2024 -0500
+
+    implementation for tree_node.c added
+
+commit e3593219705e706c50f38b5707ef00ec5ede3ff2
+Author: Jatin <jj7485@rit.edu>
+Date:   Sat Nov 23 14:24:56 2024 -0500
+
+    added interp skeleton and fixed outputs
+
+commit d362b7e127a44cced83b162a1ef58e79f8a066c6
+Author: Jatin <jj7485@rit.edu>
+Date:   Sat Nov 23 13:58:27 2024 -0500
+
+    implemented the skeleton for interp.c
+
+commit 411b484ed43971e7428e49bf80924d0435832845
+Author: Jatin <jj7485@rit.edu>
+Date:   Sat Nov 23 13:27:52 2024 -0500
+
+    Symbol table implementation and testing added, symtab.c and symtab_test.c
+
+commit 5db04fac16bf8d04d11fec35e3eb10a66995717c
+Author: Jatin <jj7485@rit.edu>
+Date:   Sat Nov 23 12:40:34 2024 -0500
+
+    stack adt implemented stack.c
+
+commit 1d4f8f3c024abb3a1813485a2d2e66c9ee131f8a
+Author: Jatin <jj7485@rit.edu>
+Date:   Wed Nov 20 18:14:34 2024 -0500
+
+    initial commit

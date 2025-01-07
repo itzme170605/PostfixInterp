@@ -1,0 +1,210 @@
+Copying files...done
+Initializing - please wait...
+LATE-1 submission of project2-1
+creating Makefile...
+Compiling your submission....
+gcc -std=c99 -ggdb -Wall -Wextra -pedantic  -c interp.c
+interp.c: In function ‘main’:
+interp.c:22:23: warning: implicit declaration of function ‘get_symbol_table’ [-Wimplicit-function-declaration]
+   22 |     symbol_t *table = get_symbol_table();
+      |                       ^~~~~~~~~~~~~~~~
+interp.c:22:23: warning: initialization of ‘symbol_t *’ {aka ‘struct symbol_s *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+gcc -std=c99 -ggdb -Wall -Wextra -pedantic  -c parser.c
+parser.c: In function ‘eval_tree’:
+parser.c:178:23: warning: unused variable ‘newSymbol’ [-Wunused-variable]
+  178 |             symbol_t *newSymbol = create_symbol(sym, val);
+      |                       ^~~~~~~~~
+gcc -std=c99 -ggdb -Wall -Wextra -pedantic  -c stack.c
+gcc -std=c99 -ggdb -Wall -Wextra -pedantic  -c symtab.c
+symtab.c: In function ‘build_table’:
+symtab.c:70:23: warning: unused variable ‘new_symbol’ [-Wunused-variable]
+   70 |             symbol_t *new_symbol = create_symbol(name, value);
+      |                       ^~~~~~~~~~
+gcc -std=c99 -ggdb -Wall -Wextra -pedantic  -c tree_node.c
+tree_node.c: In function ‘make_interior’:
+tree_node.c:12:23: warning: implicit declaration of function ‘strdup’; did you mean ‘strcmp’? [-Wimplicit-function-declaration]
+   12 |     new_node->token = strdup(token);
+      |                       ^~~~~~
+      |                       strcmp
+tree_node.c:12:21: warning: assignment to ‘char *’ from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+   12 |     new_node->token = strdup(token);
+      |                     ^
+tree_node.c: In function ‘make_leaf’:
+tree_node.c:37:21: warning: assignment to ‘char *’ from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+   37 |     new_node->token = strdup(token);
+      |                     ^
+gcc -std=c99 -ggdb -Wall -Wextra -pedantic -o interp interp.o parser.o stack.o symtab.o tree_node.o  
+
+Test 1: interp  < input.1
+Differences in your standard output:
+*** ../../project2/stdout.1	2019-10-30 13:53:39.000000000 -0400
+--- out.1	2024-11-23 23:50:31.430728000 -0500
+***************
+*** 1,13 ****
+! Enter postfix expressions (CTRL-D to exit):
+! > 0 = 0
+! > 1 = 1
+! > 2 = 2
+! > (1+2) = 3
+! > (5-1) = 4
+! > (1+(1+(1+(1+1)))) = 5
+! > (12/2) = 6
+! > (17%10) = 7
+! > (10-(5-3)) = 8
+! > ((2*(3+4))-5) = 9
+! > (((2+3)*4)/2) = 10
+! > 
+--- 1,2 ----
+! 
+! Program failed: Memory access error, core dumped
+
+Test 2: interp symtab.2 < input.2
+Differences in your standard output:
+*** ../../project2/stdout.2	2019-10-30 13:53:39.000000000 -0400
+--- out.2	2024-11-23 23:50:31.503589000 -0500
+***************
+*** 6,13 ****
+  	Name: b, Value: 20
+  	Name: a, Value: 10
+  Enter postfix expressions (CTRL-D to exit):
+! > 
+! SYMBOL TABLE:
+  	Name: zzz, Value: 3
+  	Name: y, Value: 2
+  	Name: x, Value: 1
+--- 6,12 ----
+  	Name: b, Value: 20
+  	Name: a, Value: 10
+  Enter postfix expressions (CTRL-D to exit):
+! > SYMBOL TABLE:
+  	Name: zzz, Value: 3
+  	Name: y, Value: 2
+  	Name: x, Value: 1
+
+Test 3: interp  < input.3
+Differences in your standard output:
+*** ../../project2/stdout.3	2019-10-30 13:53:39.000000000 -0400
+--- out.3	2024-11-23 23:50:31.903542000 -0500
+***************
+*** 1,18 ****
+! Enter postfix expressions (CTRL-D to exit):
+! > (a=0) = 0
+! > (b=1) = 1
+! > (b=(a+(a=b))) = 1
+! > (b=(a+(a=b))) = 2
+! > (b=(a+(a=b))) = 3
+! > (b=(a+(a=b))) = 5
+! > (b=(a+(a=b))) = 8
+! > (b=(a+(a=b))) = 13
+! > (b=(a+(a=b))) = 21
+! > (b=(a+(a=b))) = 34
+! > (b=(a+(a=b))) = 55
+! > (b=(a+(a=b))) = 89
+! > (b=(a+(a=b))) = 144
+! > 
+! SYMBOL TABLE:
+! 	Name: b, Value: 144
+! 	Name: a, Value: 89
+--- 1,2 ----
+! 
+! Program failed: Memory access error, core dumped
+
+Test 4: interp  < input.4
+Differences in your standard output:
+*** ../../project2/stdout.4	2019-10-30 13:53:39.000000000 -0400
+--- out.4	2024-11-23 23:50:32.339731000 -0500
+***************
+*** 1,4 ****
+! Enter postfix expressions (CTRL-D to exit):
+! > (1?(1:2)) = 1
+! > (0?(1:2)) = 2
+! > 
+--- 1,2 ----
+! 
+! Program failed: Memory access error, core dumped
+Differences in your standard error output:
+*** ../../project2/stderr.4	2019-10-30 13:53:39.000000000 -0400
+--- eout.4	2024-11-23 23:50:32.325084000 -0500
+***************
+*** 0 ****
+--- 1 ----
++ invalid expression, too many tokens
+
+Test 5: interp  < input.5
+Differences in your standard output:
+*** ../../project2/stdout.5	2019-10-30 13:53:39.000000000 -0400
+--- out.5	2024-11-23 23:50:32.774625000 -0500
+***************
+*** 1,19 ****
+! Enter postfix expressions (CTRL-D to exit):
+! > (a=0) = 0
+! > (b=1) = 1
+! > (c=2) = 2
+! > (d=3) = 3
+! > (e=4) = 4
+! > (f=5) = 5
+! > ((a?((c=996):(d=4)))+c) = 6
+! > ((b?((e=2):(f=998)))+f) = 7
+! > ((a=4)+a) = 8
+! > (b+(b=8)) = 9
+! > 
+! SYMBOL TABLE:
+! 	Name: f, Value: 5
+! 	Name: e, Value: 2
+! 	Name: d, Value: 4
+! 	Name: c, Value: 2
+! 	Name: b, Value: 8
+! 	Name: a, Value: 4
+--- 1,2 ----
+! 
+! Program failed: Memory access error, core dumped
+
+Test 6: interp  < input.6
+Differences in your standard output:
+*** ../../project2/stdout.6	2019-10-30 13:53:39.000000000 -0400
+--- out.6	2024-11-23 23:50:33.217777000 -0500
+***************
+*** 1,11 ****
+! Enter postfix expressions (CTRL-D to exit):
+! > (a=0) = 0
+! > (a?((a=0):(a=1))) = 1
+! > (a?((a=0):(a=1))) = 0
+! > (a?((a=0):(a=1))) = 1
+! > (a?((a=0):(a=1))) = 0
+! > (a?((a=0):(a=1))) = 1
+! > (a?((a=0):(a=1))) = 0
+! > 
+! SYMBOL TABLE:
+! 	Name: a, Value: 0
+--- 1,2 ----
+! 
+! Program failed: Memory access error, core dumped
+
+Test 7: interp  < input.7
+Differences in your standard output:
+*** ../../project2/stdout.7	2019-10-30 13:53:39.000000000 -0400
+--- out.7	2024-11-23 23:50:33.688003000 -0500
+***************
+*** 1,2 ****
+! Enter postfix expressions (CTRL-D to exit):
+! > > > 
+--- 1,2 ----
+! 
+! Program failed: Memory access error, core dumped
+Differences in your standard error output:
+*** ../../project2/stderr.7	2019-10-30 13:53:39.000000000 -0400
+--- eout.7	2024-11-23 23:50:33.353255000 -0500
+***************
+*** 1,2 ****
+- Division by zero
+- Division by zero
+--- 0 ----
+Still testing...    Sat Nov 23 23:50:35 EST 2024 
+
+Creating submission archive - please wait....
+Files being saved:
+interp.c parser.c revisions.txt stack.c symtab.c tree_node.c
+
+
+LATE-1 submission @ 2024/11/23 23:50:30 has been completed.
+Your files: interp.c tree_node.c parser.c stack.c symtab.c revisions.txt
