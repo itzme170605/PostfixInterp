@@ -4,6 +4,7 @@
 
 ## Overview
 This project implements a simple interpreter that evaluates postfix expressions. The interpreter reads expressions from the user or a file, parses them, and evaluates them using a symbol table for variable management. The implementation supports operations like addition (`+`), subtraction (`-`), multiplication (`*`), and division (`/`), along with basic symbol table operations.
+This was one of individual course projects for Mechanics of Peograming Course i took past fall 2024.
 
 ## Features
 - Parses and evaluates postfix expressions.
